@@ -13,8 +13,17 @@ function App() {
         </Greet>  
       <Greet name="Barry" heroName="Flash">
         </Greet>
-          
-    <Welcome />
+      
+
+        <Welcome name="Bruce" heroName="Batman">
+        <p>he has an bat mobile</p>
+        </Welcome>  
+      <Welcome name="Diana" heroName="Wonder Woman">
+        <button>Press shield</button>
+        </Welcome>  
+      <Welcome name="Barry" heroName="Flash">
+        </Welcome>
+  
     {/* <Hello /> */}
     </div>
   );
