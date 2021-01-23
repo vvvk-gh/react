@@ -72,3 +72,23 @@ They can have state , lifecycle hooks, `this` in react
 - Complex UI logic
 
 so both are equal now.
+
+### JSX
+
+- javascript xml an extenstion of javascript
+
+- JSX tags have a tag name , attributes and children
+
+- JSX is not necessity to write applications
+
+- JSX makes react code simpler and elegant
+
+- JSX transplies to pure js which is understood by the browsers.
+
+### Jsx Differences
+
+- class --> classnName
+- for --> htmlFor
+- camelCase Syntax
+  - onclick --> onClick
+  - tabindex --> tabIndex
