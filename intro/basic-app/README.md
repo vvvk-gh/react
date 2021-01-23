@@ -85,6 +85,38 @@ so both are equal now.
 
 - JSX transplies to pure js which is understood by the browsers.
 
+`With jsx`
+
+```js
+const Greet = () => {
+  return (
+    <div className='classOne' id='id1'>
+      <h1>Hello All</h1>
+      <p>With JSX</p>
+    </div>
+  );
+};
+```
+
+`Without jsx`
+
+```js
+const Greet = () => {
+  return React.CreateComponent(
+    'div',
+    { id: 'id1', class: 'classOne' },
+    React.createComponent('h1', null, 'Hello Vishwas'),
+    React.createComponent('p', null, 'without jsx')
+  );
+};
+```
+
+React.createComponent it will take atleast 3 parameters.
+
+1. Elementname
+2. Options (object of key-values pairs )
+3. Children / Text node
+
 ### Jsx Differences
 
 - class --> classnName
