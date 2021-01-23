@@ -6,8 +6,10 @@ function App() {
   return (
     <div className="App">
       <Greet name="Bruce" heroName="Batman">
+        <p>he has an bat mobile</p>
         </Greet>  
       <Greet name="Diana" heroName="Wonder Woman">
+        <button>Press shield</button>
         </Greet>  
       <Greet name="Barry" heroName="Flash">
         </Greet>

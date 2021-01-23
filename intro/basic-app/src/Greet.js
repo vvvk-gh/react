@@ -14,6 +14,11 @@ import React from 'react';
 
 const Greet = (props) =>{
     console.log(props);
-    return <h1>Hello {props.name} a.k.a {props.heroName}</h1>
+    return (
+        <div>
+        <h1>Hello {props.name} a.k.a {props.heroName}</h1>
+         {props.children}  {/*displays children if you dont know the property name */}
+        </div>)
+    
 }
 export default Greet;
