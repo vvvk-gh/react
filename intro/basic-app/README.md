@@ -156,3 +156,7 @@ React.createComponent it will take atleast 3 parameters.
 - React may group mutiple setState calls into a single update for a better performance
 
 #### prevState
+
+- To overcome above drawback in setState group calls we use prevState in the setState
+- When prevState is used the setState function should not take an object it should take function as it first argument
+- refer `Counter.js`
