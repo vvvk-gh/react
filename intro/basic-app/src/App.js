@@ -4,9 +4,13 @@ import Welcome from './Welcome'
 import Hello from './Hello'
 import Message from './Message'
 import Counter from './Counter'
+import ParentComponent from './ParentComponent'
 function App() {
   return (
     <div className="App">
+      
+      <ParentComponent />
+      
       {/* <Greet name="Bruce" heroName="Batman">
         <p>he has an bat mobile</p>
         </Greet>  
@@ -27,9 +31,9 @@ function App() {
         </Welcome>
    */}
 
-   <Message />
+   {/* <Message />
 
-   <Counter />
+   <Counter /> */}
     {/* <Hello /> */}
     </div>
   );
