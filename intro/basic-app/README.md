@@ -124,3 +124,35 @@ React.createComponent it will take atleast 3 parameters.
 - camelCase Syntax
   - onclick --> onClick
   - tabindex --> tabIndex
+
+### State
+
+- It is an object that is privatly maintained in the component
+
+#### Props Vs State
+
+- What
+  props are passed to the component
+  state is managed in the component
+
+- Where
+  props : functions parameters
+  state : these are variables declared in the function body
+
+- Mutable
+  props : immutable as they are passed from parent to the child (parent own props cannot be changed by the children)
+  state : these are mutabla are they are within the component so they can be changed
+
+- Accessing
+  props : `props` in functional components , `this.props` in class components
+  state : `UseState` Hook in functional components , `this.state` in class components
+
+#### setState
+
+- If you want to update state in the component we have to use setState method
+- It has 2 arguments
+  1 - Object , 2 - Callback Function
+
+- React may group mutiple setState calls into a single update for a better performance
+
+#### prevState
