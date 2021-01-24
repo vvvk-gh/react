@@ -155,8 +155,147 @@ React.createComponent it will take atleast 3 parameters.
 
 - React may group mutiple setState calls into a single update for a better performance
 
+- key points
+  Always make use of setState and never modify the state directly
+
+`DO`
+
+```js
+setState({
+  message: `Updated value`,
+});
+```
+
+`Don't`
+
+```js
+this.state.message = `Update value`;
+```
+
+Code has to be executed after the state has been updated? Place the code in callback function which is the second argument to the setState method.
+
+```js
+this.setState({ count: this.state.count + 1 }, () => {
+  console.log(this.state.count);
+});
+```
+
+When you have to update based on previous state value, pass in a function as an argument instead of regular object
+
+`DO` : passed function as an argument
+
+```js
+this.setState((prevState) => ({
+  count: prevState.count + 1,
+}));
+```
+
+`Don't` : passed object as an argument
+
+```js
+this.setState({ count: this.state.count + 1 }, () => {
+  console.log(this.state.count);
+});
+```
+
 #### prevState
 
 - To overcome above drawback in setState group calls we use prevState in the setState
 - When prevState is used the setState function should not take an object it should take function as it first argument
 - refer `Counter.js`
+
+### Event Handlers
+
+#### Function click Handler
+
+`FunctionClick.js`
+
+```js
+import React from 'react';
+
+function FunctionClick() {
+  function clickHandler() {
+    console.log('Button clicked');
+  }
+
+  return (
+    <div>
+      <button onClick={clickHandler}>Count</button>
+    </div>
+  );
+}
+
+export default FunctionClick;
+```
+
+#### Class click Handler
+
+`ClassClick.js`
+
+```js
+import React, { Component } from 'react';
+
+class ClassClick extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  clickHandler() {
+    console.log(`Button Clicked`);
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.clickHandler}>Click Me</button>
+      </div>
+    );
+  }
+}
+
+export default classClick;
+```
+
+`Note`
+
+- Always use { } for handlers
+- For class components : `this.handlerName`
+- For functional components : `handlerName`
+- Never invoke a handler just call
+- Always use arrow functions in class components for handlers
+
+```js
+
+
+ //For functional component
+
+✅ <button onClick= {clickHandler}> Click Me </button>
+
+❌ <button onClick = {clickHandler()}> Click Me </button>
+
+//For class component
+
+  // use first approach for normal handler
+  clickHandler (){
+    this.setState({
+      message : 'Change Text'
+    })
+  }
+
+✅ <button onClick={() => this.clickHandler()}>Click Me</button>
+
+//use this second approach for arrow handlers
+
+clickHandler = () =>{
+  this.setState({
+    message : 'Change Text'
+  })
+}
+
+✅  <button onClick={this.clickHandler}>Click Me</button>
+
+❌ <button onClick={this.clickHandler()}>Click Me</button>
+
+
+```
