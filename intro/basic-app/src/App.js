@@ -1,4 +1,6 @@
 import './App.css';
+import './appStyles.css'
+import styles from './appStyles.module.css'
 import Greet from './Greet'
 import Welcome from './Welcome'
 import Hello from './Hello'
@@ -6,12 +8,15 @@ import Message from './Message'
 import Counter from './Counter'
 import ParentComponent from './ParentComponent'
 import UserList from './UserList'
+import Inline from './Inline'
 
 function App() {
   return (
     <div className="App">
-      
-      <UserList />
+      <h2 className='error'>Hi</h2>
+      <h2 className={styles.success}>Hello</h2>
+      <Inline />
+      {/* <UserList /> */}
       {/* <ParentComponent /> */}
 
       {/* <Greet name="Bruce" heroName="Batman">

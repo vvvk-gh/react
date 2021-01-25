@@ -29,7 +29,7 @@ function UserList() {
             <h2>{users[2]}</h2> */}
             {/* {users.map(user => <h2>{user}</h2>)} */}
 
-            {persons.map(person => <Person perAttr={person}/>)}
+            {persons.map(person => <Person key = {person.id} perAttr={person}/>)}
 
         </div>
     )

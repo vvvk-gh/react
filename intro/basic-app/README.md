@@ -307,4 +307,131 @@ clickHandler = () =>{
 
 Recommended Terinary operator or Short Circuit
 
-### List Rendering
+### List Rendering: Key , items
+
+personal note : `Refer images in your phone`
+
+- Each list Item should have a key for better rendering
+
+- Keys is a special attribute you need to include when creating list of elements
+
+- Key gives the element spl idenity
+
+- Keys helps react to idenity which have changed/added/removed.
+
+- The above works for list of objects but for `array` list use `index` property as an key.
+
+- But use can use the index of as a key in array if and only if
+  - items in your list doesn't have an unique id
+  - static list and never be reordered or filtered.
+
+### Styling with CSS
+
+##### inline css
+
+`App.js`
+
+```js
+import React, { Component } from 'react';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Inline />;
+  }
+}
+```
+
+`Inline.js`
+
+```js
+
+import React from 'react';
+
+const heading = {
+  border-bottom : '1px solid #ccc';
+  font-size : 30px;
+}
+
+//use style attribute
+function Inline() {
+  return <h1 style = {heading}> SytleSheet </h1>;
+}
+
+export default Inline;
+```
+
+##### css modules
+
+`appStyle.css`
+
+```css
+.error {
+  color: red;
+}
+```
+
+`appStyle.module.css`
+
+```css
+.success {
+  color: green;
+}
+```
+
+`App.js`
+
+```js
+import './appStyle.css';
+import styles from './appStyle.module.css';
+
+import React, { Component } from 'react';
+
+class App extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+      <div>
+         <div className="App">
+      <h2 className='error'>Error in Parent</h2>
+      <h2 className={styles.success}>Success in Parent</h2>
+      <Inline />
+      </div>
+    );
+  }
+}
+```
+
+`Inline.js`
+
+```js
+import React from 'react';
+
+const heading = {
+  fontSize: '70px',
+  color: 'blue',
+};
+
+function Inline() {
+  return (
+    <div>
+      <h1 style={heading}>Style Sheet</h1>
+      <h1 className='error'> Error in Child</h1>❌ // <h1 className={styles.success}> Success in Child </h1>
+    </div>
+  );
+}
+
+export default Inline;
+```
+
+appstyle.css Vs appstyle.module.css
+
+- `appStyle.css` classes are applied to the child component also if same classNames are mentioned in the child component
+
+- `appStyle.module.css` has only local scope and can't be passed to child components.
+
+- Above will result in error at ❌ bcz `styles` are the reference to appStyle.modile.css and it has local scope only can be used in it's component and not in their childrens.
