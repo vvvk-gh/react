@@ -241,9 +241,9 @@ class ClassClick extends Component {
     this.state = {};
   }
 
-  clickHandler() {
+  clickHandler = () => {
     console.log(`Button Clicked`);
-  }
+  };
 
   render() {
     return (
@@ -296,6 +296,11 @@ clickHandler = () =>{
 ✅  <button onClick={this.clickHandler}>Click Me</button>
 
 ❌ <button onClick={this.clickHandler()}>Click Me</button>
-
-
 ```
+
+### Conditional Rendering
+
+- If/else
+- Element Variables
+- Terenary operator
+- Short Circuit opearator
