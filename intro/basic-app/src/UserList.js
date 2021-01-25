@@ -1,7 +1,8 @@
 import React from 'react'
+import Person from './Person'
 
 function UserList() {
-    let users = ['vamsi' ,'sai' ,'abhi'];
+    //let users = ['vamsi' ,'sai' ,'abhi'];
     let persons = [
         {id: 1,
          name : 'vamsi',
@@ -27,7 +28,9 @@ function UserList() {
             <h2>{users[1]}</h2>
             <h2>{users[2]}</h2> */}
             {/* {users.map(user => <h2>{user}</h2>)} */}
-            {persons.map(person => `Hi all my name is ${person.name} and i'm ${person.age} yrs old and I'm a ${person.occupation}`)}
+
+            {persons.map(person => <Person perAttr={person}/>)}
+
         </div>
     )
 }
