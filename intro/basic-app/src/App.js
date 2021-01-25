@@ -5,13 +5,13 @@ import Hello from './Hello'
 import Message from './Message'
 import Counter from './Counter'
 import ParentComponent from './ParentComponent'
-import UserGreeting from './UserGreeting'
+import UserList from './UserList'
 
 function App() {
   return (
     <div className="App">
       
-      <UserGreeting />
+      <UserList />
       {/* <ParentComponent /> */}
 
       {/* <Greet name="Bruce" heroName="Batman">

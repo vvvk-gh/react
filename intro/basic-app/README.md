@@ -306,3 +306,5 @@ clickHandler = () =>{
 - Short Circuit opearator
 
 Recommended Terinary operator or Short Circuit
+
+### List Rendering
