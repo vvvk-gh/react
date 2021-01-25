@@ -304,3 +304,5 @@ clickHandler = () =>{
 - Element Variables
 - Terenary operator
 - Short Circuit opearator
+
+Recommended Terinary operator or Short Circuit

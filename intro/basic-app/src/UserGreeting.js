@@ -5,14 +5,23 @@ class UserGreeting extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLoggedIn : false
+            isLoggedIn : true
         }
     }
     render() {
+
+//short circuit operator
+//if first is true it appears else wont render the second part
+return this.state.isLoggedIn && <div>Hello Vishwas</div> 
+
 //Terinary Operator:
-return(
-    this.state.isLoggedIn ? <div>Hello Vishwas</div> : <div>Hello Guest</div>
-)
+// return(
+//     this.state.isLoggedIn ? (
+//     <div>Hello Vishwas</div>
+//     ) : (
+//     <div>Hello Guest</div>
+//     )
+// )
  //Element variables 
     // let message;
     // if(this.state.isLoggedIn){
