@@ -435,3 +435,13 @@ appstyle.css Vs appstyle.module.css
 - `appStyle.module.css` has only local scope and can't be passed to child components.
 
 - Above will result in error at ❌ bcz `styles` are the reference to appStyle.modile.css and it has local scope only can be used in it's component and not in their childrens.
+
+### Forms : Controlled Components
+
+- The form fields which are handled by the react is called as controlled components.
+
+- We can make an normal field a controllable fields by making 2 things
+  - value linking it with state
+  - onchange linking with setState
+
+Note : `refer Form.js`

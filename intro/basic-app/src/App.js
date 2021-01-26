@@ -9,13 +9,16 @@ import Counter from './Counter'
 import ParentComponent from './ParentComponent'
 import UserList from './UserList'
 import Inline from './Inline'
+import Form from './Form'
 
 function App() {
   return (
     <div className="App">
-      <h2 className='error'>Hi</h2>
+
+      <Form />
+      {/* <h2 className='error'>Hi</h2>
       <h2 className={styles.success}>Hello</h2>
-      <Inline />
+      <Inline /> */}
       {/* <UserList /> */}
       {/* <ParentComponent /> */}
 
