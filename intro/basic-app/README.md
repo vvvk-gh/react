@@ -445,3 +445,195 @@ appstyle.css Vs appstyle.module.css
   - onchange linking with setState
 
 Note : `refer Form.js`
+
+### Lifecycle Methods
+
+- Each and every class component undergoes serveral stages in a lifecycle and we use few methods to overwrite the change in a lifecycle
+
+- `hooks` should be used for lifecycle in functional components.
+
+- `Phases` in Class Component Lifecycle
+
+  - `Mounting` : when an instance of a component is being created and inserted into the DOM.
+
+    ```bash
+      //methods of mounting phase are
+
+      constructor
+      static getDerviedStateFromProps
+      render
+      componentDidMount
+    ```
+
+  - `Updating` : when a component is being re-rendered as a result of changes to either its props or state.
+
+    ```bash
+        //methods of updating phase are
+
+        static getDerviedStateFromProps
+        shouldComponentUpdate
+        render
+        getSnapshotBeforeUpdate
+        componentDidUpdate
+    ```
+
+- `Unmounting` : when a component is being removed from the DOM.
+
+  ```bash
+  //methods of unmounting phase are
+
+  componentWillUnmount
+  ```
+
+- `Error Handling` : when there is an error during rendering , in lifecycle method , or in constructor of any child component.
+
+  ```bash
+  //methods of error handling phase are
+
+  static getDerviedStateFromError
+  componentDidCatch
+  ```
+
+### Order of method invoking in `mounting` phase
+
+```js
+  constructor(prop)
+        ⬇
+  static getDerviedFromProps(props ,state)
+        ⬇
+      render()
+        ⬇
+    componentDidMount()
+```
+
+constructor
+
+```js
+constructor(props);
+what : a special function that will get called whenever a new component is created.
+
+uses : Intializing a state and binding event handlers
+
+dont : never call HTTP requests in it.
+super(props) :  this will call base class constructor
+```
+
+static getDerviedStateFromProps
+
+```js
+static getDerivedFromProps(props , state)
+
+It is rarely used in lifecycle
+
+what: mostly used when the state of the component depends on changes in the props over time.
+
+uses : set the state,  can't use {this.state} as it is static method must return object which sets the state.
+
+dont : never use HTTP calls.
+
+```
+
+render
+
+```js
+render()
+
+what : only required method in the class component.
+
+uses : used to read props, state and render the JSX/UI.
+
+dont : never change state or interact with DOM or make ajax calls.
+```
+
+componentDidMount
+
+```js
+componentDidMount()
+
+what : called only once in lifecycle
+
+uses : invoked immediately after a component and all its children components have been rendered to the DOM and can cause side effects. Ex : you can Interact with DOM and call ajax calls
+```
+
+`LifecycleA.js`
+
+```js
+import React, { Component } from 'react';
+
+class LifecycleA extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+    };
+    console.log('LifeCycle A constructor');
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('Lifecycle A getDerivedFromProps');
+    return null;
+  }
+
+  componentDidMount() {
+    console.log('Lifecycle A Did Mount');
+  }
+
+  render() {
+    console.log('Lifecycle A render');
+    return <div>Lifecycle A </div>;
+  }
+}
+
+export default LifecycleA;
+```
+
+`Ouput`
+
+```console
+  LifeCycle A constructor
+  Lifecycle A getDerived from props
+  Lifecycle A render
+  Lifecycle A Did Mount
+```
+
+what will be order of if you have child component LifecycleB in LifecycleA ?
+
+```console
+  LifeCycle A constructor
+  Lifecycle A getDerived from props
+  Lifecycle A render
+  LifeCycle B constructor
+  Lifecycle B getDerived from props
+  Lifecycle B render
+  Lifecycle B Did Mount
+  Lifecycle A Did Mount
+```
+
+### Order of method invoking in `updating` phase
+
+```js
+
+static getDerviedFromProps(props ,state)
+        ⬇
+shouldComponentUpdate()
+        ⬇
+      render()
+        ⬇
+getSnapshotBeforeUpdate()
+        ⬇
+componentDidUpdate()
+```
+
+### Order of method invoking in `unmounting` phase
+
+```js
+componentWillUnmount();
+```
+
+### Order of method invoking in `error handling` phase
+
+```js
+  static getDerviedFromError()
+          ⬇
+  componentDidCatch();
+```

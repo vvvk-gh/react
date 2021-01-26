@@ -10,18 +10,18 @@ import ParentComponent from './ParentComponent'
 import UserList from './UserList'
 import Inline from './Inline'
 import Form from './Form'
+import LifecycleA from './LifecycleA'
 
 function App() {
   return (
     <div className="App">
-
-      <Form />
+      <LifecycleA />
+      {/* <Form /> */}
       {/* <h2 className='error'>Hi</h2>
       <h2 className={styles.success}>Hello</h2>
       <Inline /> */}
       {/* <UserList /> */}
       {/* <ParentComponent /> */}
-
       {/* <Greet name="Bruce" heroName="Batman">
         <p>he has an bat mobile</p>
         </Greet>  
@@ -31,7 +31,6 @@ function App() {
       <Greet name="Barry" heroName="Flash">
         </Greet>
        */}
-
         {/* <Welcome name="Bruce" heroName="Batman">
         <p>he has an bat mobile</p>
         </Welcome>  
@@ -41,9 +40,7 @@ function App() {
       <Welcome name="Barry" heroName="Flash">
         </Welcome>
    */}
-
    {/* <Message />
-
    <Counter /> */}
     {/* <Hello /> */}
     </div>
