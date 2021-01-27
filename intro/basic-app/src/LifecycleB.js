@@ -14,6 +14,20 @@ static getDerivedStateFromProps(props , state) {
     return null;
 }
 
+shouldComponentUpdate(){
+  console.log('Lifecycle B should Compenent Update');
+  return true;
+}
+
+getSnapshotBeforeUpdate(prevProps , prevState){
+  console.log('Lifecycle B get snapshot before update');
+  return null;
+}
+ //the return snapshot value will be used in the componentDidUpdate , method
+componentDidUpdate(){
+  console.log('Lifecycle B Component Did Update')
+}
+
   componentDidMount() {
     console.log('Lifecycle  B Did Mount');
   }

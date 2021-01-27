@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -468,24 +468,23 @@ Note : `refer Form.js`
   - `Updating` : when a component is being re-rendered as a result of changes to either its props or state.
 
     ```bash
-        //methods of updating phase are
+    //methods of updating phase are
 
-        static getDerviedStateFromProps
-        shouldComponentUpdate
-        render
-        getSnapshotBeforeUpdate
-        componentDidUpdate
+    static getDerviedStateFromProps
+    shouldComponentUpdate
+    render
+    getSnapshotBeforeUpdate
+    componentDidUpdate
     ```
 
-- `Unmounting` : when a component is being removed from the DOM.
+  - `Unmounting` : when a component is being removed from the DOM.
 
-  ```bash
-  //methods of unmounting phase are
+    ```bash
+    //methods of unmounting phase are
+    componentWillUnmount
+    ```
 
-  componentWillUnmount
-  ```
-
-- `Error Handling` : when there is an error during rendering , in lifecycle method , or in constructor of any child component.
+  - `Error Handling` : when there is an error during rendering , in lifecycle method , or in constructor of any child component.
 
   ```bash
   //methods of error handling phase are
@@ -624,16 +623,75 @@ getSnapshotBeforeUpdate()
 componentDidUpdate()
 ```
 
+static getDerviedFromProps
+
+```js
+static getDerviedFromProps(props , state) same as above
+- It is invoked everytime a component is rendered.
+- Need to return a new component based on new state, props or return null
+```
+
+shouldComponentUpdate
+
+```js
+  shouldCompentUpdate(nextProps ,nextState)
+
+  what : Dictates if the component should re-render or not.
+
+  uses : Performace optimazation
+
+  dont : never call HTTP requests , setState methods
+
+```
+
+render
+
+```js
+render()
+same as mentioned above
+it reads props and state and renders the JSX/UI
+```
+
+getSnapshotBeforeUpdate
+
+```js
+getSnapshotBeforeUpdate(prevProps, prevState);
+
+what : called right before the changes from the virtual DOM are to be reflected in the DOM. Method will either return null or a value and the returned value will be passed to next method (componentDidUpdate())
+
+use : capture information from the DOM.
+
+```
+
+componentDidUpdate
+
+```js
+componentDidUpdate(preProps, preState, snapshot);
+
+what : called after the render is finished in the re-render cycle
+
+use : Cause Side effects
+```
+
 ### Order of method invoking in `unmounting` phase
 
 ```js
-componentWillUnmount();
+componentWillUnmount()
+
+what : Method will invoke immediately before a component is unmounted and destroyed.
+
+use : cancelling network requests or subscriptions  , removing handlers and also invalidating timers.
+
+dont : never call the setState method
+
 ```
 
 ### Order of method invoking in `error handling` phase
 
 ```js
-  static getDerviedFromError()
+  static getDerviedFromError(error)
           ⬇
-  componentDidCatch();
+  componentDidCatch(error , info);
+
+  both are invoked when there is an error either during  rendering , in a lifeCycle method , or in constructor of any child component.
 ```
