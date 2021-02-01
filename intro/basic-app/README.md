@@ -695,3 +695,107 @@ dont : never call the setState method
 
   both are invoked when there is an error either during  rendering , in a lifeCycle method , or in constructor of any child component.
 ```
+
+# Fragments
+
+When we dont want to add any extra nodes to the parent unnecessarily we use Fragments.
+Best example : table as parent and its rows as child component.
+
+Traditional Approach
+
+`Table.js`
+
+```js
+import React from 'react';
+import TableRow from './TableRow';
+function Table() {
+  let persons = [
+    { id: 1, name: 'vamsi', age: 23, occupation: 'Software Engineer' },
+    {
+      id: 2,
+      name: 'abhi',
+      age: 27,
+      occupation: 'Software Engineer',
+    },
+    {
+      id: 3,
+      name: 'sai',
+      age: 24,
+      occupation: 'Software Engineer',
+    },
+  ];
+
+  return (
+    <table border='1px'>
+      {persons.map((person) => (
+        <TableRow key={person.id} perAttr={person} />
+      ))}
+    </table>
+  );
+}
+
+export default Table;
+```
+
+TableRow.js
+
+```js
+import React from 'react';
+function TableRow(props) {
+  let perAttr = { props };
+  return (
+    <div>
+      <tr>
+        <td>{perAttr.name}</td>
+        <td>{perAttr.age}</td>
+        <td>{perAttr.occupation}</td>
+      </tr>
+    </div>
+  );
+}
+
+export deafult TableRow;
+```
+
+the above exectes buts gives an error
+
+```terminal
+  index.js:1 Warning: validateDOMNesting(...): <tr> cannot appear as a child of <div>.
+    at tr
+    at div
+    at TableRow
+    at table
+    at Table
+    at div
+    at App
+```
+
+we are getting this error as <tr> gets wrapped inside an div and these is where fragements are useful.
+
+using fragments
+
+`TableRow.js`
+
+```js
+import React from 'react';
+
+function TableRow({ perAttr }) {
+  return (
+    <>
+      <tr>
+        <td>{perAttr.name}</td>
+        <td>{perAttr.age}</td>
+        <td>{perAttr.occupation}</td>
+      </tr>
+    </>
+
+    // <React.Fragment>
+    //  <tr>
+    //     <td>{perAttr.name}</td>
+    //     <td>{perAttr.age}</td>
+    //     <td>{perAttr.occupation}</td>
+    //   </tr>
+    // </React-Fragment>
+  );
+}
+```

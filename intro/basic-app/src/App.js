@@ -11,11 +11,13 @@ import UserList from './UserList'
 import Inline from './Inline'
 import Form from './Form'
 import LifecycleA from './LifecycleA'
+import Table from './Table'
 
 function App() {
   return (
     <div className="App">
-      <LifecycleA />
+      <Table />
+      {/* <LifecycleA /> */}
       {/* <Form /> */}
       {/* <h2 className='error'>Hi</h2>
       <h2 className={styles.success}>Hello</h2>
