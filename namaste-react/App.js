@@ -9,12 +9,20 @@
 
 
 const h1Family = React.createElement('div', { id: "parent" },
-    React.createElement('div', { id: "child" },
-        [
-            React.createElement('h1', { id: 'heading' }, 'Im h1 tag'),
-            React.createElement('h2', { id: 'heading2' }, 'Im h2 tag ')
-        ]
-    )
+    [
+        React.createElement('div', { id: "child" },
+            [
+                React.createElement('h1', { id: 'heading' }, 'Im h1 tag'),
+                React.createElement('h2', { id: 'heading2' }, 'Im h2 tag ')
+            ]
+        ),
+        React.createElement('div', { id: "child2" },
+            [
+                React.createElement('h1', { id: 'heading' }, 'Im h1 tag'),
+                React.createElement('h2', { id: 'heading2' }, 'Im h2 tag ')
+            ]
+        )
+    ]
 );
 
 console.log(h1Family); //returns object and not html tag
