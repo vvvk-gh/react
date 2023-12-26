@@ -6,12 +6,18 @@ import ReactDOM from 'react-dom/client';
 
 //React Functional component : A function that returns a JSX 
 
-const HeadingComponent = () => {
-    return <h1>This is heading component</h1>;
-}
+//component composition
+const Title = () => (<h1>This is a Title of the chapter</h1>);
 
-const HeadingSingleLineComponent = () => <h1>This is heading JSX component</h1>;
+const HeadingComponent = () => (
+    <div className="container">
+        <Title />
+        <h2>This is sub heading component</h2>
+    </div>
+
+);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<HeadingSingleLineComponent />);
+root.render(<HeadingComponent />);

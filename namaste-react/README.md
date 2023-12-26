@@ -165,3 +165,5 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
   ```JSX
   const heading = <h1 className="root" tabIndex="5">This is heading !</h1>
   ```
+
+- Component Composition : The concept of placing a existing component into the other component
