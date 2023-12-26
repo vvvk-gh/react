@@ -1,4 +1,6 @@
-{/* 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+{/*
     CREATING A NESTED REACT ELEMENT
 <div id="parent">
     <div id="child">

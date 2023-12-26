@@ -55,6 +55,11 @@ It also check the `integrity` which is hash code to used to verify is the same v
 
 to overcome issues like my code is working at local but not in production.
 
+npx vs npm
+
+npm: install the package modules.
+npx: excutes the package modules.
+
 Why node-modules got so many package ?
 
 - when ever you install a package it might have depency of some other package and it might have depency of another package and so..on
@@ -71,16 +76,25 @@ Parcel : Benefits of using paracel.
 
 - Dev Build
 - Local server
-- HMR = Hot module replacement (replaces the content on save)
+- Hot module replacment(HMR) = replaces the content on save: cache + dist
 - Compression
-- File watching Algorithm - written in c++
+- File watching algorithm - written in c++
 - Caching: faster builds
 - Image optimazation
 - Bundling
 - Minification
 - Consistent Hashing
 - Code splitting
-- Differencial bundling - helps to run smoothly in old and different versions of the browser.
+- Differencial bundling - helps to run smoothly in old browsers.
 - Diagnostics
 - Error Handling
 - HTTPS
+- Tree shaking - remove unused code.
+- Diffrent dev and prod bundles
+
+normal build vs production build
+
+- npx parcel index.html
+- npx parcel build index.html (prod)
+
+Note : When using parcel we have to remove the `main` field at package.json file
