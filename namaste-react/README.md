@@ -1,4 +1,4 @@
-#Namaste React
+#React
 
 #### Building a production ready app
 
@@ -131,3 +131,30 @@ example :
 npm run start || npm start (only shortcut which works for start)
 npm run build
 ```
+
+- React Element vs JSX
+
+```js
+// React element ==> object ==render()==> HTML Element
+const heading = React.createElement(
+  'h1',
+  { id: 'heading' },
+  'This is a heading'
+);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log(heading);
+```
+
+```JSX
+// JSX - HTML-like, XML-like syntax to write easy react.
+const jsxHeading = <h1>This is a heading thru JSX !</h1>;
+console.log(jsxHeading);
+```
+
+both outputs the same object but JSX is an easy syntax to write, read and understand.
+
+- How JSX converts the code browser understanable
+  - Any JSX expression throws an error at dev tools of the browsers.
+  - The Web bundler manages to transpile the code via barbel before it reaches js engine and makes it understandable to the browser.
+    Transpliation :
+    > JSX ==> React.createElement ==> ReactElement-js object ==> HTMLElement(render)

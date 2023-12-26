@@ -1,33 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-{/*
-    CREATING A NESTED REACT ELEMENT
-<div id="parent">
-    <div id="child">
-        <h1>Im a h1 tag</h1>
-        <h2>Im a h2 tag</h2>
-    </div>
-</div> */}
 
+// React element ==> object  ==render()==> HTML Element   
 
-const h1Family = React.createElement('div', { id: "parent" },
-    [
-        React.createElement('div', { id: "child" },
-            [
-                React.createElement('h1', { id: 'heading' }, 'Im h1 tag'),
-                React.createElement('h2', { id: 'heading2' }, 'Im h2 tag ')
-            ]
-        ),
-        React.createElement('div', { id: "child2" },
-            [
-                React.createElement('h1', { id: 'heading' }, 'Im h1 tag'),
-                React.createElement('h2', { id: 'heading2' }, 'Im h2 tag ')
-            ]
-        )
-    ]
-);
-
-console.log(h1Family); //returns object and not html tag
-
+const heading = React.createElement('h1', { id: 'heading', }, 'This is a heading');
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(h1Family);
+console.log(heading);
+
+// JSX - HTML-like, XML-like syntax to write easy react.
+
+const jsxHeading = <h1>This is a heading thru JSX !</h1>;
+console.log(jsxHeading);
+
+// jsxHeading and heading prints the same object they both are same
+
+// output 
+root.render(jsxHeading);
