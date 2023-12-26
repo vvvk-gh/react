@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "This is a namaste react package by vvvk-gh",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
   },
   "author": "VVVK-GH",
   "license": "ISC",
@@ -14,5 +16,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserslist": [
+    "cover 93% in IN"
+  ]
 }

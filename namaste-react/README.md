@@ -55,17 +55,17 @@ It also check the `integrity` which is hash code to used to verify is the same v
 
 to overcome issues like my code is working at local but not in production.
 
-npx vs npm
+- npx vs npm
 
 npm: install the package modules.
 npx: excutes the package modules.
 
-Why node-modules got so many package ?
+- Why node-modules got so many package ?
 
-- when ever you install a package it might have depency of some other package and it might have depency of another package and so..on
-  This property is called as trasitive dependency.
+when ever you install a package it might have depency of some other package and it might have depency of another package and so..on
+This property is called as trasitive dependency.
 
-##### What is a bundler ?
+#### What is a bundler ?
 
 All the code files needs to be bundled together.
 
@@ -85,16 +85,49 @@ Parcel : Benefits of using paracel.
 - Minification
 - Consistent Hashing
 - Code splitting
-- Differencial bundling - helps to run smoothly in old browsers.
+- Differencial bundling - helps to run smoothly in old browsers(browserslist).
 - Diagnostics
 - Error Handling
 - HTTPS
 - Tree shaking - remove unused code.
 - Diffrent dev and prod bundles
 
-normal build vs production build
+Browserslist: giving the input of what all browsers it should supprt to create different builds accordingly
 
-- npx parcel index.html
-- npx parcel build index.html (prod)
+```
+"browserslist" : {
+    "last 2 versions"
+}
 
-Note : When using parcel we have to remove the `main` field at package.json file
+"browserslist" : {
+    "cover 93.5% in IN"
+}
+```
+
+read more at [browserslist](https://github.com/browserslist/browserslist#query-composition)
+
+- normal build vs production build
+
+  - npx parcel index.html
+  - npx parcel build index.html (prod)
+
+Note : When using parcel we have to remove the `main` field at `package.json` file
+
+- Replace commands with scripts at `package.json` file
+
+```
+"scripts" : {
+    "start": parcel index.html
+    "build": parecel build index.html
+    "test" : jest
+}
+```
+
+going forward in the project you can uses these scripts instead of npx commands
+
+example :
+
+```
+npm run start || npm start (only shortcut which works for start)
+npm run build
+```
