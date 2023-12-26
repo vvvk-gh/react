@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// React element ==> object  ==render()==> HTML Element   
+//React Component
+//Always Start with a capital Letter
 
-const heading = React.createElement('h1', { id: 'heading', }, 'This is a heading');
-const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log(heading);
+//React Functional component : A function that returns a JSX 
 
-// JSX - HTML-like, XML-like syntax to write easy react.
+const HeadingComponent = () => {
+    return <h1>This is heading component</h1>;
+}
 
-const jsxHeading = <h1>This is a heading thru JSX !</h1>;
-console.log(jsxHeading);
-
-// jsxHeading and heading prints the same object they both are same
-
-// output 
-root.render(jsxHeading);
+const HeadingSingleLineComponent = () => <h1>This is heading component</h1>;
