@@ -154,7 +154,14 @@ console.log(jsxHeading);
 both outputs the same object but JSX is an easy syntax to write, read and understand.
 
 - How JSX converts the code browser understanable
+
   - Any JSX expression throws an error at dev tools of the browsers.
   - The Web bundler manages to transpile the code via barbel before it reaches js engine and makes it understandable to the browser.
-    Transpliation :
-    > JSX ==> React.createElement ==> ReactElement-js object ==> HTMLElement(render)
+    > Babel transpliation :
+    > JSX ==> Barbel transplies to React.createElement ==> ReactElement-JS object ==> HTMLElement(render)
+
+- All the attributes in the JSX should be in camcel case
+
+  ```JSX
+  const heading = <h1 className="root" tabIndex="5">This is heading !</h1>
+  ```
