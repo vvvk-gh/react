@@ -1,0 +1,14 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is a namaste react package by vvvk-gh",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "VVVK-GH",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
