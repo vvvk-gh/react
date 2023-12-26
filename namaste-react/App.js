@@ -10,4 +10,8 @@ const HeadingComponent = () => {
     return <h1>This is heading component</h1>;
 }
 
-const HeadingSingleLineComponent = () => <h1>This is heading component</h1>;
+const HeadingSingleLineComponent = () => <h1>This is heading JSX component</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<HeadingSingleLineComponent />);
