@@ -186,3 +186,20 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
   To know how entripise level backend data will look like and how is it structured and passed into the frontend
   We can look into the network tabs of swiggy and zomato and try to copy the request response data.
   Json Viewer pro chrome extension will help us understand in tree and graph flow how the data is structured.
+
+- Why its important to send the unique keys while iterating?
+  To avoid re-rendering of the components as react doesnt know which card is new.
+  It gives a huge performance penalty.
+  If we give id/key for the component in the iteration and if some new restaurent is added so reacts understands the one only new one needs to be rendered and not all the existing ones can remain same.
+
+```jsx
+<div className='res-container'>
+  {resList.map(restuarent => <RestuarentCard key={restuarent.info.id} resDetails={restuarent} />;)}
+</div>
+```
+
+Can we use index as the key in the iteration ?
+
+- Even logically its correct react officials or the dev document dont recommend doing it.
+  > Notes : Let me explain, a key is the only thing React uses to identify DOM elements. What happens if you push an item to the list or remove something in the middle? If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
+  > [More here](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)

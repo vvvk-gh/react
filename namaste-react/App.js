@@ -98,7 +98,7 @@ const RestuarentCard = (props) => {
 const Body = () => {
     return (<div className="body">
         <div className="res-container">
-            {resList.map(restuarent => <RestuarentCard resDetails={restuarent} />)}
+            {resList.map((restuarent) => { return (<RestuarentCard key={restuarent.info.id} resDetails={restuarent} />) })}
         </div >
     </div >)
 }
