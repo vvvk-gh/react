@@ -42,7 +42,8 @@ const Header = () => {
     )
 }
 
-const RestuarentCard = () => {
+const RestuarentCard = (props) => {
+    console.log(props);
     return (
         <div className='res-card'>
             <img src="https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg"
@@ -51,9 +52,9 @@ const RestuarentCard = () => {
             />
             <div className="res-details">
                 <div className="res-name">
-                    <h3>Pancakes 99</h3>
+                    <h3>{props.resName}</h3>
                 </div>
-                <h4>Breakfast, Tiffins, Desserts</h4>
+                <h5>{props.cuisine}</h5>
                 <h4>4.4 stars</h4>
                 <h5>38 mins</h5>
             </div>
@@ -63,16 +64,8 @@ const RestuarentCard = () => {
 const Body = () => {
     return (<div className="body">
         <div className="res-container">
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
-            <RestuarentCard />
+            <RestuarentCard resName='KFC' cuisine='Zinger Meal, Biriyani-Box, Bucket-Chicken' />
+            <RestuarentCard resName='McD' cuisine='French Fries, Happy Meal, Preuiem Burger' />
         </div >
     </div>)
 }

@@ -167,3 +167,10 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
   ```
 
 - Component Composition : The concept of placing a existing component into the other component
+
+- Props : It's the shortcut for properties. we use props when you want to dynamically send some data to the component
+
+```jsx
+  <RestaurentCard resName='KFC' cuisine ='Zinger Meal, Biriyani-Box, Bucket-Chicken'/>
+  <RestaurentCard resName='McD' cuisine ='French Fries, Happy Meal, Preuiem Burger'/>
+```
