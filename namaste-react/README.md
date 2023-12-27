@@ -174,3 +174,15 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
   <RestaurentCard resName='KFC' cuisine ='Zinger Meal, Biriyani-Box, Bucket-Chicken'/>
   <RestaurentCard resName='McD' cuisine ='French Fries, Happy Meal, Preuiem Burger'/>
 ```
+
+- What is Config Driven UI ?
+  Controlling the UI using the data (config) and the config comes from backend.
+
+  > Delhi has different carousel.
+  > Hyderabad has a different carousel.
+  > So based the api configuration or data the UI will be changed.
+
+- Production level API's call
+  To know how entripise level backend data will look like and how is it structured and passed into the frontend
+  We can look into the network tabs of swiggy and zomato and try to copy the request response data.
+  Json Viewer pro chrome extension will help us understand in tree and graph flow how the data is structured.
