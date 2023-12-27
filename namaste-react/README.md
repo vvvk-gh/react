@@ -166,6 +166,33 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
   const heading = <h1 className="root" tabIndex="5">This is heading !</h1>
   ```
 
+### Building a food delivery app (Anatomy)
+
+- Homepage
+
+  - Logo
+  - Nav-items
+
+- Body
+
+  - Search
+  - Restuarent container
+    -Restuarent card
+    - Img
+    - Cusines
+    - ratings
+    - delivery time
+
+- Footer
+  - Copyright
+  - Links
+  - Address
+  - Contact
+
+> Tool Suggestion :
+> Api copied from the network call of swiggy
+> Easily copied into our code via `json viewer Pro `extension
+
 - Component Composition : The concept of placing a existing component into the other component
 
 - Props : It's the shortcut for properties. we use props when you want to dynamically send some data to the component
@@ -198,8 +225,7 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 </div>
 ```
 
-Can we use index as the key in the iteration ?
-
-- Even logically its correct react officials or the dev document dont recommend doing it.
-  > Notes : Let me explain, a key is the only thing React uses to identify DOM elements. What happens if you push an item to the list or remove something in the middle? If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
-  > [More here](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+- Can we use index as the key in the iteration ?
+  - Even though logically its correct react officials or the dev document don't recommend doing it.
+    > Notes : Let me explain, a key is the only thing React uses to identify DOM elements. What happens if you push an item to the list or remove something in the middle? If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
+    > [More here](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)

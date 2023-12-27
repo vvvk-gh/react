@@ -1,34 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Header from './src/components/Header';
+import Body from './src/components/Body';
 
-//Building a app like Swiggy
-
-/** 
- * Homepage
-    - Logo
-    - Nav-items
-
- * Body
-    - Search
-    - Restuarent container
-        -Restuarent card
-            - Img
-            - Cusines
-            - ratings
-            - delivery time
-
-* Footer
-    - Copyright
-    - Links
-    - Address
-    - Contact
-*/
-
-/**
- * Api copied from the network call of swiggy 
- * installed json viewer extension
- * 
- */
 const resList = [
     { "info": { "id": "23696", "name": "McDonald's", "cloudinaryImageId": "bb7ae131544c7d37e10fc5faf76f09d6", "locality": "Kukatpally", "areaName": "Kukatpally", "costForTwo": "₹400 for two", "cuisines": ["Burgers", "Beverages", "Cafe", "Desserts"], "avgRating": 4.2, "parentId": "630", "avgRatingString": "4.2", "totalRatingsString": "10K+", "sla": { "deliveryTime": 22, "lastMileTravel": 3.8, "serviceability": "SERVICEABLE", "slaString": "22 mins", "lastMileTravelString": "3.8 km", "iconType": "ICON_TYPE_EMPTY" }, "availability": { "nextCloseTime": "2023-12-29 03:45:00", "opened": true }, "badges": { "textExtendedBadges": [{ "iconId": "guiltfree/GF_Logo_android_3x", "shortDescription": "options available", "fontColor": "#7E808C" }] }, "isOpen": true, "type": "F", "badgesV2": { "entityBadges": { "imageBased": {}, "textBased": {}, "textExtendedBadges": { "badgeObject": [{ "attributes": { "description": "", "fontColor": "#7E808C", "iconId": "guiltfree/GF_Logo_android_3x", "shortDescription": "options available" } }] } } }, "aggregatedDiscountInfoV3": { "header": "40% OFF", "subHeader": "UPTO ₹80" }, "loyaltyDiscoverPresentationInfo": { "logoCtx": { "text": "BENEFITS", "logo": "v1634558776/swiggy_one/OneLogo_3x.png" }, "freedelMessage": "FREE DELIVERY" }, "differentiatedUi": { "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT", "differentiatedUiMediaDetails": { "mediaType": "ADS_MEDIA_ENUM_IMAGE", "lottie": {}, "video": {} } }, "reviewsSummary": {}, "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT", "restaurantOfferPresentationInfo": {} }, "analytics": {}, "cta": { "link": "https://www.swiggy.com/restaurants/mcdonalds-kukatpally-hyderabad-23696", "type": "WEBLINK" } },
     { "info": { "id": "222934", "name": "Istah - The Mediterranean Way", "cloudinaryImageId": "9a01f2935fcb5ae05426db8264062102", "locality": "Nizampet", "areaName": "Kukatpally", "costForTwo": "₹240 for two", "cuisines": ["Mediterranean", "Snacks", "Biryani", "Grill", "Kebabs", "Arabian", "Lebanese", "Beverages", "Desserts", "Italian", "Turkish"], "avgRating": 4.3, "parentId": "3518", "avgRatingString": "4.3", "totalRatingsString": "10K+", "sla": { "deliveryTime": 27, "lastMileTravel": 4.5, "serviceability": "SERVICEABLE", "slaString": "27 mins", "lastMileTravelString": "4.5 km", "iconType": "ICON_TYPE_EMPTY" }, "availability": { "nextCloseTime": "2023-12-28 23:30:00", "opened": true }, "badges": { "imageBadges": [{ "imageId": "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png", "description": "OnlyOnSwiggy" }], "textExtendedBadges": [{ "iconId": "guiltfree/GF_Logo_android_3x", "shortDescription": "options available", "fontColor": "#7E808C" }] }, "isOpen": true, "type": "F", "badgesV2": { "entityBadges": { "imageBased": { "badgeObject": [{ "attributes": { "description": "OnlyOnSwiggy", "imageId": "v1690360529/Ratnesh_Badges/Only_on_swiggy_badge_4x.png" } }] }, "textBased": {}, "textExtendedBadges": { "badgeObject": [{ "attributes": { "description": "", "fontColor": "#7E808C", "iconId": "guiltfree/GF_Logo_android_3x", "shortDescription": "options available" } }] } } }, "aggregatedDiscountInfoV3": { "header": "60% OFF", "subHeader": "UPTO ₹110" }, "loyaltyDiscoverPresentationInfo": { "logoCtx": { "text": "BENEFITS", "logo": "v1634558776/swiggy_one/OneLogo_3x.png" }, "freedelMessage": "FREE DELIVERY" }, "differentiatedUi": { "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT", "differentiatedUiMediaDetails": { "mediaType": "ADS_MEDIA_ENUM_IMAGE", "lottie": {}, "video": {} } }, "reviewsSummary": {}, "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT", "restaurantOfferPresentationInfo": {} }, "analytics": {}, "cta": { "link": "https://www.swiggy.com/restaurants/istah-the-mediterranean-way-nizampet-kukatpally-hyderabad-222934", "type": "WEBLINK" } },
@@ -52,62 +26,11 @@ const resList = [
     { "info": { "id": "3171", "name": "KS Bakers", "cloudinaryImageId": "6127cb288329ad1c9e988276914d48ad", "locality": "Kukatpally", "areaName": "Bhagyanagar Colony", "costForTwo": "₹250 for two", "cuisines": ["Bakery", "Pizzas", "Desserts", "Snacks", "Fast Food"], "avgRating": 4.1, "parentId": "574", "avgRatingString": "4.1", "totalRatingsString": "10K+", "sla": { "deliveryTime": 24, "lastMileTravel": 3.9, "serviceability": "SERVICEABLE", "slaString": "24 mins", "lastMileTravelString": "3.9 km", "iconType": "ICON_TYPE_EMPTY" }, "availability": { "nextCloseTime": "2023-12-28 22:45:00", "opened": true }, "badges": { "textExtendedBadges": [{ "iconId": "guiltfree/GF_Logo_android_3x", "shortDescription": "options available", "fontColor": "#7E808C" }] }, "isOpen": true, "type": "F", "badgesV2": { "entityBadges": { "imageBased": {}, "textBased": {}, "textExtendedBadges": { "badgeObject": [{ "attributes": { "description": "", "fontColor": "#7E808C", "iconId": "guiltfree/GF_Logo_android_3x", "shortDescription": "options available" } }] } } }, "aggregatedDiscountInfoV3": { "header": "₹100 OFF", "subHeader": "ABOVE ₹199", "discountTag": "FLAT DEAL" }, "loyaltyDiscoverPresentationInfo": { "logoCtx": { "text": "BENEFITS", "logo": "v1634558776/swiggy_one/OneLogo_3x.png" }, "freedelMessage": "FREE DELIVERY" }, "differentiatedUi": { "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT", "differentiatedUiMediaDetails": { "mediaType": "ADS_MEDIA_ENUM_IMAGE", "lottie": {}, "video": {} } }, "reviewsSummary": {}, "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT", "restaurantOfferPresentationInfo": {} }, "analytics": {}, "cta": { "link": "https://www.swiggy.com/restaurants/ks-bakers-kukatpally-bhagyanagar-colony-hyderabad-3171", "type": "WEBLINK" } }
 ];
 
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img src="https://img.freepik.com/free-vector/food-shopping-logo-template-design_460848-10299.jpg" alt="site logo" className="logo" />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Homepage</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestuarentCard = (props) => {
-
-    const { resDetails } = props;
-    const { name, cuisines, avgRating, sla } = resDetails?.info;
-    console.log(cuisines);
-
-    let top3Cusines;
-    if (cuisines.length > 3) {
-        top3Cusines = cuisines.slice(0, 3).join(',');
-    }
-    return (
-        <div className='res-card'>
-            <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resDetails.info.cloudinaryImageId}
-                alt="restaurent logo"
-                className='res-logo'
-            />
-            <div className="res-details">
-                <h3>{name}</h3>
-                <h5>{(cuisines.length > 3) ? top3Cusines : cuisines.join(',')}</h5>
-                <h5>{avgRating} Stars</h5>
-                <h5>{sla.deliveryTime} Mins</h5>
-            </div>
-        </div>)
-}
-
-const Body = () => {
-    return (<div className="body">
-        <div className="res-container">
-            {resList.map((restuarent) => { return (<RestuarentCard key={restuarent.info.id} resDetails={restuarent} />) })}
-        </div >
-    </div >)
-}
-
 const AppLayout = () => {
     return (
         <div>
             <Header />
-            <Body />
+            <Body resList={resList} />
         </div>
     );
 }
