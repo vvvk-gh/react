@@ -98,22 +98,9 @@ const RestuarentCard = (props) => {
 const Body = () => {
     return (<div className="body">
         <div className="res-container">
-            <RestuarentCard resDetails={resList[0]} />
-            <RestuarentCard resDetails={resList[1]} />
-            <RestuarentCard resDetails={resList[2]} />
-            <RestuarentCard resDetails={resList[3]} />
-            <RestuarentCard resDetails={resList[5]} />
-            <RestuarentCard resDetails={resList[6]} />
-            <RestuarentCard resDetails={resList[7]} />
-            <RestuarentCard resDetails={resList[8]} />
-            <RestuarentCard resDetails={resList[9]} />
-            <RestuarentCard resDetails={resList[10]} />
-            <RestuarentCard resDetails={resList[11]} />
-            <RestuarentCard resDetails={resList[12]} />
-            <RestuarentCard resDetails={resList[13]} />
-            <RestuarentCard resDetails={resList[14]} />
+            {resList.map(restuarent => <RestuarentCard resDetails={restuarent} />)}
         </div >
-    </div>)
+    </div >)
 }
 
 const AppLayout = () => {
