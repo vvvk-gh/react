@@ -42,7 +42,8 @@ const Header = () => {
     )
 }
 
-const RestuarentCard = (props) => {
+// destruction of props
+const RestuarentCard = ({ cuisine, resName }) => {
     console.log(props);
     return (
         <div className='res-card'>
@@ -52,9 +53,10 @@ const RestuarentCard = (props) => {
             />
             <div className="res-details">
                 <div className="res-name">
-                    <h3>{props.resName}</h3>
+                    <h3>{resName}</h3>
                 </div>
-                <h5>{props.cuisine}</h5>
+                {/* destrcuting the props */}
+                <h5>{cuisine}</h5>
                 <h4>4.4 stars</h4>
                 <h5>38 mins</h5>
             </div>
