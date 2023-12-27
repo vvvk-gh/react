@@ -226,6 +226,27 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 ```
 
 - Can we use index as the key in the iteration ?
+
   - Even though logically its correct react officials or the dev document don't recommend doing it.
     > Notes : Let me explain, a key is the only thing React uses to identify DOM elements. What happens if you push an item to the list or remove something in the middle? If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
     > [More here](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/)
+
+- Export Types
+
+  - Default Export/Import
+
+  ```js
+      export default <component>
+      import component  from "./filepath"
+  ```
+
+  We can export only one default for the the file.
+
+- Named Export/Import
+
+  ```JSX
+    export const <component>
+    import {component } from "./filepath"
+  ```
+
+  Supports multiple exports from the file.
