@@ -270,6 +270,23 @@ How react works behind the scences once the value of an state variable is modifi
 
 - detailed explaination on [Adclite](https://github.com/acdlite/react-fiber-architecture)
 
-Monolith vs Micro-service
+- Monolith vs Micro-service
 
 ![img2](./src/media/MonolithvsMicroService.svg)
+
+- Two ways to send data from backend to the UI.
+
+  1. onload site ---> make an API call ---(fetched data wait for 500ms)---> Render UI.
+
+  2. As soon as the page load ---> quickly render ---> make an API ----> re-render UI.
+
+  recommended the 2nd approach for any app development as it got better User experience.
+
+- useEffect Hook : If we have to do something after rendering the component we have to write in inside useEffect callback.
+
+  The useEffect function will has 2 arguments
+
+  useEffect(()=>{console.log("UseEffect Called")}, []);
+
+  callback function : this function is called after component renders
+  dependency array :
