@@ -359,3 +359,39 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 root.render(<RouterProvider router={appRouter} />);
 //This will render based on url change.
 ```
+
+- Handling unexpected routes
+  for example if an user tried `<url>/12331212` that route that exist in your application
+  That can also will be handled in browserconfing like below
+
+  ```jsx
+  import { createBrowserRouter, RouterProvider } from 'react-dom-router';
+
+  const appRoutes = createBrowserRouter([
+    {
+      path: '/',
+      element: <AppLayout />
+      errorElement: <Error /> //This compnent will render when the user enters wrong path.
+    }
+  ])
+  ```
+
+  `useRouteError` Hook will gives the deeper details of the error.
+
+  ```jsx
+  //Error.js
+  import { useRouteError } from 'react-router-dom';
+  const Error = () => {
+    const err = useRouteError();
+    console.log(err);
+    return (
+      <div>
+        <h3>oops Something went wrong !!</h3>
+        /*what went wrong*/
+        {err.code} {err.statusText}
+      </div>
+    );
+  };
+
+  export default Error;
+  ```
