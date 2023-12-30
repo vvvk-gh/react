@@ -395,3 +395,42 @@ root.render(<RouterProvider router={appRouter} />);
 
   export default Error;
   ```
+
+  children routes and outlet
+
+  ```jsx
+  import { createBrowserRouter, RouterProvider, Outlet } from 'rect-router-dom';
+
+  const AppLayout = () => {
+    return (
+      <div className="app">
+      <Header />
+      <Outlet />
+      </div>
+    )
+  }
+  const appRoutes = createBrowserRouter([
+    {
+      path: '/',
+      element: <AppLayout />,
+      children: [
+        {
+          path: '/',
+          element: <Body />,
+        },
+        {
+          path: '/about',
+          element: <About />,
+        },
+        {
+          path: '/contact',
+          element: <Contact />,
+        },
+      ],
+      errorElement: <Error />,
+    },
+  ]);
+
+  const root = reactDOM.createRoot(document.getElementById('root'));
+  root.render(<ReactProvider router={appRoutes}>);
+  ```
