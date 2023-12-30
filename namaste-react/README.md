@@ -250,3 +250,10 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
   ```
 
   Supports multiple exports from the file.
+
+#### React Hooks
+
+(Normal JS utility functions)
+
+- useState() - Superpowerful state variables in react
+- useEffect()
