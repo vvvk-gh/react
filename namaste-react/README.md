@@ -289,4 +289,5 @@ How react works behind the scences once the value of an state variable is modifi
   useEffect(()=>{console.log("UseEffect Called")}, []);
 
   callback function : this function is called after component renders
-  dependency array :
+
+- Shimmer UI : It represents the page actual UI, so users will understand how quickly the web or mobile app will load.

@@ -1,6 +1,6 @@
 import RestuarentCard from "./RestuarentCard";
 import { useEffect, useState } from "react";
-
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [listOfRestaurents, setListOfRestaurents] = useState([]);
@@ -15,6 +15,9 @@ const Body = () => {
         fetchData();
     }, []);
 
+    if (listOfRestaurents.length === 0) {
+        return <Shimmer />
+    }
     return (<div className="body">
         <div className="filter">
             <button className="filter-btn" onClick={() => {
