@@ -14,7 +14,7 @@ export const Header = () => {
                     <li>About us</li>
                     <li>Contact us</li>
                     <li>Cart</li>
-                    <button class="login-btn" onClick={() => {
+                    <button className="login-btn" onClick={() => {
                         userLoginState === 'Login' ? setUserLoginState('Logout') : setUserLoginState('Login');
                     }}>{userLoginState}</button>
                 </ul>

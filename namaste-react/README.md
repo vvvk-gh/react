@@ -263,7 +263,7 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 
   - How react works behind the scences once the value of an state variable is modified ?
 
-  - Re-conciliation Algorithm (React-Fiber)
+  - Re-conciliation Algorithm is also known as React-Fiber
 
     ![Img](./src/media/reconciliationAlgoritm.svg)
 
@@ -271,7 +271,7 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 
   - Monolith vs Micro-service
 
-  ![img2](./src/media/MonolithvsMicroService.svg)
+    ![img2](./src/media/MonolithvsMicroService.svg)
 
   - Two ways to send data from backend to the UI.
 
