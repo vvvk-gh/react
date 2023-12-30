@@ -15,10 +15,8 @@ const Body = () => {
         fetchData();
     }, []);
 
-    if (listOfRestaurents.length === 0) {
-        return <Shimmer />
-    }
-    return (<div className="body">
+    //Conditional Rendering
+    return listOfRestaurents.length === 0 ? <Shimmer /> : (<div className="body">
         <div className="filter">
             <button className="filter-btn" onClick={() => {
                 const filteredRestaurents = listOfRestaurents.filter(restuarent => restuarent.info.avgRating > 4);
