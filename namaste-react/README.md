@@ -257,30 +257,29 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 
 - useState() - Superpowerful state variables in react
   Whenever a state variable updates/changes react re-renders the component.
+  But even the whole component renders its will only update the elements those need to be updated via diff alogirthm.
 
-- useEffect()
+  ##### Reconcliation Cycle upon state variable change.
 
-## Core Concept
+  - How react works behind the scences once the value of an state variable is modified ?
 
-How react works behind the scences once the value of an state variable is modified ?
+  - Re-conciliation Algorithm (React-Fiber)
 
-- Re-conciliation Algorithm (React-Fiber)
+    ![Img](./src/media/reconciliationAlgoritm.svg)
 
-![Img](./src/media/reconciliationAlgoritm.svg)
+    detailed explaination on [Adclite](https://github.com/acdlite/react-fiber-architecture)
 
-- detailed explaination on [Adclite](https://github.com/acdlite/react-fiber-architecture)
+  - Monolith vs Micro-service
 
-- Monolith vs Micro-service
+  ![img2](./src/media/MonolithvsMicroService.svg)
 
-![img2](./src/media/MonolithvsMicroService.svg)
+  - Two ways to send data from backend to the UI.
 
-- Two ways to send data from backend to the UI.
+    1. onload site ---> make an API call ---(fetched data wait for 500ms)---> Render UI.
 
-  1. onload site ---> make an API call ---(fetched data wait for 500ms)---> Render UI.
+    2. As soon as the page load ---> quickly render ---> make an API ----> re-render UI.
 
-  2. As soon as the page load ---> quickly render ---> make an API ----> re-render UI.
-
-  recommended the 2nd approach for any app development as it got better User experience.
+    recommended the 2nd approach for any app development as it got better User experience.
 
 - useEffect Hook : If we have to do something after rendering the component we have to write in inside useEffect callback.
 
