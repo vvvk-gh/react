@@ -1,4 +1,4 @@
-#React
+# React
 
 #### Building a production ready app
 
@@ -268,4 +268,4 @@ How react works behind the scences once the value of an state variable is modifi
 
 ![Img](./src/media/reconciliationAlgoritm.svg)
 
-- detailed explination on [Adclite](https://github.com/acdlite/react-fiber-architecture)
+- detailed explaination on [Adclite](https://github.com/acdlite/react-fiber-architecture)
