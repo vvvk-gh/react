@@ -256,4 +256,16 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 (Normal JS utility functions)
 
 - useState() - Superpowerful state variables in react
+  Whenever a state variable updates/changes react re-renders the component.
+
 - useEffect()
+
+## Core Concept
+
+How react works behind the scences once the value of an state variable is modified ?
+
+- Re-conciliation Algorithm (React-Fiber)
+
+![Img](./src/media/reconciliationAlgoritm.svg)
+
+- detailed explination on [Adclite](https://github.com/acdlite/react-fiber-architecture)
