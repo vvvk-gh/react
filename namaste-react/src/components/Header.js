@@ -1,7 +1,7 @@
 import { SITE_LOGO } from "../utils/constants";
 import { useState } from "react";
 
-export const Header = () => {
+const Header = () => {
     const [userLoginState, setUserLoginState] = useState('Login');
     return (
         <div className="header">

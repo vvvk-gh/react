@@ -281,12 +281,81 @@ both outputs the same object but JSX is an easy syntax to write, read and unders
 
     recommended the 2nd approach for any app development as it got better User experience.
 
-- useEffect Hook : If we have to do something after rendering the component we have to write in inside useEffect callback.
+- useEffect Hook :
 
-  The useEffect function will has 2 arguments
+  - This is used when you have to do/update/modify something at content after rendering the component
+  - we have to write logic inside useEffect callback.
 
-  useEffect(()=>{console.log("UseEffect Called")}, []);
+    ```jsx
+    useEffect(() => {
+      console.log('UseEffect Called');
+    }, []);
+    ```
 
-  callback function : this function is called after component renders
+    The useEffect function will has 2 arguments
+
+    - callback function : this function is called after component renders
+
+    - dependency array : generally every time the component is rendered the useEffect is called but we can change this behaviour using depency array
+
+    - No dependency array
+
+      ```jsx
+      useEffect(() => {
+        console.log('UseEffect Called');
+      });
+      ```
+
+      this will execute everytime the compontent is rendered.
+
+    - Empty dependency array will load the useEffect only once that on a intial load.
+
+      ```jsx
+      useEffect(() => {
+        console.log('UseEffect Called');
+      }, []);
+      ```
+
+    - Dependency array got some variable then it will only render when the variable is updated.
+
+      ```jsx
+      useEffect(() => {
+        console.log('UseEffect Called');
+      }, [btnName]);
+      ```
+
+      So everytime btnName updates, the useEffect is called.
+      UseEffect() get called on intial load in all 3 cases.
 
 - Shimmer UI : It represents the page actual UI, so users will understand how quickly the web or mobile app will load.
+
+#### React Routes
+
+- We need to create browserConfiguration
+- Define which path leads to which component/element
+
+```jsx
+import { createBrowserRouter } from 'react-router-dom';
+
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppLayout />,
+  },
+  {
+    path: '/about',
+    element: <About />,
+  },
+]);
+```
+
+- Once above browser configuration is made, we need to provide our configration to render it in the application.
+- This possible using `RouterProvdier` component
+
+```jsx
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+//root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
+//This will render based on url change.
+```
