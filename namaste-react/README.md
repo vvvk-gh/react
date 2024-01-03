@@ -434,3 +434,165 @@ root.render(<RouterProvider router={appRouter} />);
   const root = reactDOM.createRoot(document.getElementById('root'));
   root.render(<ReactProvider router={appRoutes}>);
   ```
+
+React Hook life cycle (class)
+
+```jsx
+import React from 'react';
+class LifeCycle extends from React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+      count2: 2,
+    };
+    console.log("The parent constructror");
+  };
+
+//This will execute after the compilation of compontent attached to the screen.
+  componentDidMount() {
+    console.log("Parent Component Did Mount");
+  }
+
+  render() {
+    console.log("The parent Render");
+    return (<h1>This is a Life cycle Component<h2>)
+  }
+}
+```
+
+> The order of execution of logs
+> parent constructor.
+> parent render.
+> parent component did mount.
+
+if this a has child
+
+```jsx
+//parent.js
+import React from 'react';
+class LifeCycle extends from React.Component {
+  constructor(props) {
+   //super(props)
+   //state
+    console.log("The parent constructror");
+  };
+
+//This will execute after the compilation of compontent attached to the screen.
+  componentDidMount() {
+    console.log("Parent Component Did Mount");
+  }
+
+  render() {
+    console.log("The parent Render");
+    return (
+      <div>
+        <h1>This is a Life cycle Component<h2>
+        <FirstChild>
+      </div>
+      )
+  }
+}
+```
+
+```jsx
+//child
+import {Component} from 'react';
+class FirstChild extends from React {
+  constructor(props) {
+   //super(props)
+   //state
+    console.log("First constructror");
+  };
+
+//This will execute after the compilation of compontent attached to the screen.
+  componentDidMount() {
+    console.log("Child Component Did Mount");
+  }
+
+  render() {
+    console.log("Child Render");
+    return (
+      <div>
+        <h1>This is a Life cycle Component<h2>
+        <FirstChild>
+      </div>
+      )
+  }
+}
+```
+
+life cycle whenthe parent and child.
+
+> 1.parent constructor
+> 2.parent render
+> 3.First child constructor
+> 4.First child render
+> 5.First Child DidComponent Mount
+> 6.Parent DidComponent Mount
+
+what if its got 2 child
+
+```jsx
+//parent.js
+import React from 'react';
+class LifeCycle extends from React.Component {
+  constructor(props) {
+   //super(props)
+   //state
+    console.log("The parent constructror");
+  };
+
+//This will execute after the compilation of compontent attached to the screen.
+  componentDidMount() {
+    console.log("Parent Component Did Mount");
+  }
+
+  render() {
+    console.log("The parent Render");
+    return (
+      <div>
+        <h1>This is a Life cycle Component<h2>
+        <FirstChild>
+        <SecondChild>
+      </div>
+      )
+  }
+}
+```
+
+Wrong Sequence (people assume)
+
+> The order of sequence for life cycle methods :
+> 1.Parent constructor
+> 2.Parent render
+> 3.FirstChild constructor
+> 4.FirstChild render
+> 5.FirstChild DidComponent Mount
+> 6.secondChild constructor 7.
+> 8.secondChild DidComponentMount
+> 9.Parent DidComponent Mount
+
+Right seqence (this is how it works)
+
+> The order of sequence for life cycle methods :
+> 1.Parent constructor
+> 2.Parent render
+> 3.FirstChild constructor
+> 4.FirstChild render
+> 5.secondChild constructor
+> 6.secondChild render
+> 7.secondChild DidComponentMount
+> 8.FirstChild DidComponent Mount
+> 9.Parent DidComponent Mount
+
+But how ?
+The react has 2 phases
+
+> render phase = constructor + render
+> Commit phase = react will update the dom + componentdid mount
+
+so thats the reason why the above example got that batched construtor and renders and later Did Component mount.
+
+[For more details](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
