@@ -23,7 +23,7 @@ const RestaurantMenu = () => {
     if (fetchedMenu === null) return <Shimmer />;
 
     const { name, cuisines, costForTwoMessage } = fetchedMenu.cards[0].card.card.info;
-    const { itemCards } = fetchedMenu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+    const { itemCards } = fetchedMenu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
 
     return (<div>
         <h1>{name}</h1>

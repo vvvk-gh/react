@@ -593,6 +593,6 @@ The react has 2 phases
 > render phase = constructor + render
 > Commit phase = react will update the dom + componentdid mount
 
-so thats the reason why the above example got that batched construtor and renders and later Did Component mount.
+so thats the reason why the above example got that batched execution of construtor and renders and later Did Component mount.
 
 [For more details](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
